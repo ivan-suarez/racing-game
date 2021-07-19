@@ -6,6 +6,9 @@ public class LapHandle : MonoBehaviour
 {
 
     public int checkpointAmt;
+
+    public LapTimer lapTimer;
+
     
     private void OnTriggerEnter(Collider other)
     {
@@ -17,6 +20,7 @@ public class LapHandle : MonoBehaviour
             {
                 player.checkpointIndex = 0;
                 player.lapNumber++;
+                lapTimer.timeStart = 0f;
 
                 Debug.Log("Lap: "+player.lapNumber);
             }
