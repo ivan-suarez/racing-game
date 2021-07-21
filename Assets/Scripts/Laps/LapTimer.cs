@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -18,6 +19,7 @@ public class LapTimer : MonoBehaviour
     void Update()
     {
         timeStart += Time.deltaTime;
-        textBox.text = "Current lap: " + Mathf.Round(timeStart).ToString();
+        
+        textBox.text = "Current lap: " + Math.Round(timeStart, 3).ToString();
     }
 }

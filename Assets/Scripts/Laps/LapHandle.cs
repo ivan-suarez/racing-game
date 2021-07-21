@@ -8,7 +8,9 @@ public class LapHandle : MonoBehaviour
     public int checkpointAmt;
 
     public LapTimer lapTimer;
+    public BestLap bestLap;
 
+    
     
     private void OnTriggerEnter(Collider other)
     {
@@ -20,6 +22,7 @@ public class LapHandle : MonoBehaviour
             {
                 player.checkpointIndex = 0;
                 player.lapNumber++;
+                bestLap.lapTimes.Add(lapTimer.timeStart);
                 lapTimer.timeStart = 0f;
 
                 Debug.Log("Lap: "+player.lapNumber);
