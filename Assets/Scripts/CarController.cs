@@ -25,10 +25,12 @@ public class CarController : MonoBehaviour
         {
             wheel.motorTorque = strengthCoefficienct *
                 Time.deltaTime * inputManager.throttle;
+            Debug.Log(wheel.motorTorque);
         }
         foreach (WheelCollider wheel in steeringWheels)
         {
             wheel.steerAngle = maxTurn * inputManager.steer;
         }
+        
     }
 }
