@@ -4,15 +4,11 @@ using UnityEngine;
 
 public class Race : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public List<Player> racers = new List<Player>();
+    
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        
     }
 }

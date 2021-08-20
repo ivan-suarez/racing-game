@@ -11,6 +11,8 @@ public class Player : MonoBehaviour
     public int lapNumber;
     public int checkpointIndex;
 
+    public int position;
+
     void Start()
     {
         rigidbody = GetComponent<Rigidbody>();

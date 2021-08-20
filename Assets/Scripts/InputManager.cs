@@ -6,6 +6,7 @@ public class InputManager : MonoBehaviour
 {
     public float throttle;
     public float steer;
+    public bool handbrake;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,9 +14,10 @@ public class InputManager : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         throttle = Input.GetAxis("Vertical");
         steer = Input.GetAxis("Horizontal");
+        handbrake = (Input.GetAxis("Jump")!=0)? true: false;
     }
 }

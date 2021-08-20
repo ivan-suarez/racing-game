@@ -387,6 +387,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lapNumber: 0
   checkpointIndex: 0
+  position: 0
 --- !u!1001 &190195092
 PrefabInstance:
   m_ObjectHideFlags: 0
