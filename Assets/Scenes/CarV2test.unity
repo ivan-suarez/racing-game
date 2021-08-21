@@ -457,39 +457,60 @@ MonoBehaviour:
   maxTurn: 20
   totalPower: 0
   wheelsRPM: 0
-  engineTorque:
+  enginePower:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 2
-      outSlope: 2
+      time: 254.87784
+      value: 35.697025
+      inSlope: 0
+      outSlope: 0
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
-      time: 1.4549568
-      value: 0.94126445
-      inSlope: -0.3273464
-      outSlope: -0.3273464
+      time: 2463.6199
+      value: 361.98367
+      inSlope: 0.07365984
+      outSlope: 0.07365984
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 2.008885
-      value: 0.6324226
-      inSlope: -0.3802347
-      outSlope: -0.3802347
+      time: 3873.9739
+      value: 324.90668
+      inSlope: -0.1483674
+      outSlope: -0.1483674
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.11023578
-      outWeight: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 4767.1396
+      value: 75.022644
+      inSlope: 0.005762125
+      outSlope: 0.005762125
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  engineRPM: 0
+  smoothTime: 0.01
+  gears:
+  - 2
+  - 1.7
+  - 1.3
+  - 0.9
+  - 0.7
+  gearNum: 0
+  maxRPM: 3000
+  minRPM: 1500
+  KPH: 0
 --- !u!114 &360855775
 MonoBehaviour:
   m_ObjectHideFlags: 0
