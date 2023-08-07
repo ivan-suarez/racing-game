@@ -21,6 +21,9 @@ public class CarController : MonoBehaviour
     public float finalDrive = 3.538f;  // Final drive ratio
     public float currentRPM;
 
+
+    public GameObject[] wheelMesh = new GameObject[4];
+
     // Start is called before the first frame update
     void Start()
     {
@@ -38,6 +41,8 @@ public class CarController : MonoBehaviour
     void FixedUpdate()
     {
 
+       AnimateWheels();
+       // OnDrawGizmos()
          // Calculate the current engine RPM
         WheelCollider firstWheel = throttleWheels[0];
         currentRPM = firstWheel.rpm * gearRatios[currentGear] * finalDrive;
@@ -68,6 +73,51 @@ public class CarController : MonoBehaviour
 
         //Debug the car's speed in KM/H
         Debug.Log("Speed: " + GetComponent<Rigidbody>().velocity.magnitude * 3.6f + " KM/H");
-        GUI.Label(new Rect(20, 20, 200, 20), "Gear: " + currentGear);
+       // GUI.Label(new Rect(20, 20, 200, 20), "Gear: " + currentGear);
     }
+
+    void AnimateWheels()
+{
+    for (int i = 0; i < wheelMesh.Length; i++)
+    {
+        WheelCollider wheelCollider = null;
+
+        if (steeringWheels.Count > i)
+        {
+            wheelCollider = steeringWheels[i];
+        }
+        else if (throttleWheels.Count > (i - steeringWheels.Count))
+        {
+            wheelCollider = throttleWheels[i - steeringWheels.Count];
+        }
+
+        if (wheelCollider != null)
+        {
+            Transform meshTransform = wheelMesh[i].transform;
+
+            Vector3 position;
+            Quaternion rotation;
+            wheelCollider.GetWorldPose(out position, out rotation);
+
+            meshTransform.position = position;
+            meshTransform.rotation = rotation;
+        }
+    }
+}
+
+
+
+void OnDrawGizmos()
+    {
+        WheelCollider wheelCollider = steeringWheels[0];
+        
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireSphere(transform.position, wheelCollider.radius);
+    }
+
+
+
+
+
+
 }
