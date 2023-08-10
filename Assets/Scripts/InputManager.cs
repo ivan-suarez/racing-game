@@ -14,7 +14,7 @@ public class InputManager : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    protected virtual void FixedUpdate()
     {
         throttle = Input.GetAxis("Vertical");
         steer = Input.GetAxis("Horizontal");
